@@ -130,7 +130,7 @@ class BattleModel:
 
 
         """
-        Attempts to add a combatant to the current combatants list.
+        Adds a combatant to the current combatants list.
 
         Args:
             combatant_data (Meal): The meal to be added as a combatant.
