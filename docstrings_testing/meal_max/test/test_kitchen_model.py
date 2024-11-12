@@ -4,7 +4,7 @@ import sqlite3
 
 import pytest
 
-from meal_max.models.kithen_model import (
+from meal_max.models.kitchen_model import (
     Meal,
     create_meal,
     clear_meals,
