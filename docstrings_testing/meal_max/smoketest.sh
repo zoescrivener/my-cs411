@@ -147,6 +147,25 @@ get_leaderboard() {
   fi
 }
 
+# Function to update meal stats with a win or loss
+update_meal_stats() {
+  meal_id=$1
+  result=$2
+
+  echo "Updating meal stats for meal ID $meal_id with result: $result..."
+  response=$(curl -s -X POST "$BASE_URL/update-meal-stats" -H "Content-Type: application/json" \
+    -d "{\"meal_id\": $meal_id, \"result\": \"$result\"}")
+
+  if echo "$response" | grep -q '"status": "success"'; then
+    echo "Meal stats updated successfully for result: $result"
+    [ "$ECHO_JSON" = true ] && echo "$response" | jq .
+  else
+    echo "Failed to update meal stats for result: $result"
+    echo "$response"
+    exit 1
+  fi
+}
+
 ###############################################
 #
 # Battle Management
