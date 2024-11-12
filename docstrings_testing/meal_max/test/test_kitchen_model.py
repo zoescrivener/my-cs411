@@ -1,4 +1,4 @@
-from context lib inport contextmanager
+from contextlib import contextmanager
 import re
 import sqlite3
 
