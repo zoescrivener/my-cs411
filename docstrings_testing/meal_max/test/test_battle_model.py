@@ -75,8 +75,6 @@ def test_get_battle_score(battle_model, sample_meal_1):
 
     
 
-    """need to test for , removing the loser,
-    updating the stats for each combatant, all the intermediate calculations"""
 
 def test_battle(battle_model, sample_meal_1, sample_meal_2, mock_update_meal_stats, mocker):
     """Test battling two combatants."""
